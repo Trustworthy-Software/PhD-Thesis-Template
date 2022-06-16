@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 %\usepackage{titlespages}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \usepackage{graphicx}
 %\usepackage{subfig}
 \usepackage{hyperref}
@@ -30,25 +30,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{titlesec}
-\titleformat{\chapter}
-  {\normalfont\sffamily\huge\bfseries}
-  {\hspace{-1mm}\thechapter}{20pt}{\Huge}
-\titleformat{name=\chapter,numberless}
-  {\normalfont\sffamily\huge\bfseries}
-  {\hspace{-8mm}}{20pt}{\Huge}
-\titleformat{\section}
-  {\normalfont\sffamily\Large\bfseries}
-  {\thesection}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\sffamily\large\bfseries}
-  {\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\normalfont\sffamily\normalsize\bfseries}
-  {\thesubsubsection}{1em}{}
-\renewcommand{\cftchapfont}{\bfseries\sffamily}
-\renewcommand\cftloftitlefont{\bfseries\Huge\sffamily}
-\renewcommand\cftlottitlefont{\bfseries\Huge\sffamily}
-\renewcommand\cfttoctitlefont{\bfseries\Huge\sffamily}
+
 \usepackage[ruled,vlined,lined,commentsnumbered]{algorithm2e}
 % Note that the sign must be
 %  µ
@@ -73,7 +55,7 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{5}
 
-\setcounter{minitocdepth}{4}
+\setcounter{minitocdepth}{2}
 \setlength{\mtcindent}{24pt}
 \renewcommand{\mtcfont}{\small\rm}
 \renewcommand{\mtcSfont}{\small\bf}
@@ -92,11 +74,16 @@
 
 
 \fancypagestyle{unilustyle}{
-    \fancyhead[LO]{\emph{\slshape{\nouppercase{\leftmark}}}}
-    \fancyhead[RE]{\emph{\slshape{\nouppercase{\rightmark}}}}
-    \fancyhead[LE,RO]{ }
-    \fancyfoot[RE,LO]{\thepage}
-    \fancyfoot[LE,RO]{}
+    
+    \fancyhead[RO]{\emph{\slshape{\nouppercase{\rightmark}}}}
+    \fancyhead[LE]{\emph{\slshape{\nouppercase{\leftmark}}}}
+    \fancyhead[RE,LO]{ }
+    \fancyhfoffset[LE]{0mm}
+    \fancyhfoffset[RO]{0mm}
+    \fancyhfoffset[RE]{-20mm}
+    \fancyhfoffset[LO]{-20mm}
+    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[RE,LO]{}
     \fancyfoot[CE,CO]{ }
     \renewcommand{\headrulewidth}{0.1pt}
     \renewcommand{\footrulewidth}{0pt}
